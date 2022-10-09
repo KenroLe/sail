@@ -1,0 +1,8 @@
+# This allows other people to use your project as a dependency using the jitpack maven repository
+
+before_install:
+  # This script fixes an issue with jitpack
+  - wget https://raw.githubusercontent.com/sormuras/bach/releases/11/install-jdk.sh
+  - source ./install-jdk.sh --feature 16 --license GPL
+jdk:
+  - openjdk16

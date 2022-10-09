@@ -1,0 +1,108 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.spongepowered.org/maven/"
+    }
+    maven {
+        url "https://maven.fabricmc.net/"
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+sourceCompatibility = 16
+targetCompatibility = 16
+compileJava.options.release.set(16)
+
+version = project_version
+group = "art.xeloboyo.airshipsloader"
+archivesBaseName = "AirshipsGameProvider"
+
+dependencies {
+    // Copied from https://github.com/FabricMC/fabric-loader/blob/master/build.gradle
+    testImplementation 'org.jetbrains:annotations:22.0.0'
+
+    api group: 'net.fabricmc', name: 'fabric-loader', version: loader_version
+
+    api "org.ow2.asm:asm:${project.asm_version}"
+    api "org.ow2.asm:asm-analysis:${project.asm_version}"
+    api "org.ow2.asm:asm-commons:${project.asm_version}"
+    api "org.ow2.asm:asm-tree:${project.asm_version}"
+    api "org.ow2.asm:asm-util:${project.asm_version}"
+
+    api("net.fabricmc:sponge-mixin:${project.mixin_version}") {
+        exclude module: 'launchwrapper'
+        exclude module: 'guava'
+    }
+    api 'net.fabricmc:tiny-mappings-parser:0.3.0+build.17'
+    api 'net.fabricmc:tiny-remapper:0.8.1'
+    api 'net.fabricmc:access-widener:2.1.0'
+
+}
+
+java {
+    withSourcesJar()
+}
+
+task exportDependencies(type: Copy) {
+    doFirst {
+        delete "fabric-dependencies"
+    }
+
+    configurations.implementation.setCanBeResolved(true)
+    configurations.api.setCanBeResolved(true)
+    from configurations.implementation {
+        exclude group: "com.google.guava"
+        exclude group: "com.google.code.gson"
+        exclude group: "org.jetbrains"
+    }
+    into "fabric-dependencies"
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.runtimeClasspath.collect { it.getName() }.join(' '),
+                'Specification-Version': 8.0,
+                'Multi-Release': 'true'
+        )
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact(jar)
+            artifact(sourcesJar)
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+
+                //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                configurations.implementation.allDependencies.each {
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', it.group)
+                    dependencyNode.appendNode('artifactId', it.name)
+                    dependencyNode.appendNode('version', it.version)
+                }
+            }
+        }
+    }
+
+    repositories {
+    }
+}
+
