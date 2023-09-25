@@ -233,7 +233,7 @@ public class AirshipGameProvider implements GameProvider {
 
         List<String> gameLocations = new ArrayList<>();
         // Add all usual jar locations
-        gameLocations.add("C:/Program Files (x86)/Steam/steamapps/common/Airships Conquer the Skies/Airships.jar");
+        gameLocations.add("D:/SteamLibrary/steamapps/common/Airships Conquer the Skies/Airships.jar");
         gameLocations.add("./Airships.jar");
 
         List<Path> jarPaths = gameLocations.stream()
@@ -252,7 +252,7 @@ public class AirshipGameProvider implements GameProvider {
 
         entrypoint = result.name;
         gameJar = result.path;
-        gameVersion = new Builder().setNumber(1).setBuild(1).setRevision(1).build();
+        gameVersion = new Builder().setNumber(1).setBuild(2).setRevision(2).build();
 
         try{
             var classifier = new LibClassifier<>(AirshipsLibraries.class, envType, this);
