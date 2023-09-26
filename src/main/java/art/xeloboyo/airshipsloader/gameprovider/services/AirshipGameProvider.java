@@ -4,6 +4,7 @@ import art.xeloboyo.airshipsloader.gameprovider.*;
 import art.xeloboyo.airshipsloader.gameprovider.GameVersion.*;
 import art.xeloboyo.airshipsloader.gameprovider.patch.AirshipsBrandingPatch;
 import art.xeloboyo.airshipsloader.gameprovider.patch.AirshipsEntrypointPatch;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.FormattedException;
 import net.fabricmc.loader.impl.game.*;
@@ -226,20 +227,19 @@ public class AirshipGameProvider implements GameProvider {
     public boolean locateGame(FabricLauncher launcher, String[] args) {
         // I'm not very sure about the implementation of this method
         // Minecraft's is quite complicated and all other examples aren't very good
-        var envType = launcher.getEnvironmentType();
+        EnvType envType = launcher.getEnvironmentType();
 
         arguments = new Arguments();
         arguments.parse(args);
 
         List<String> gameLocations = new ArrayList<>();
         // Add all usual jar locations
-        gameLocations.add("D:/SteamLibrary/steamapps/common/Airships Conquer the Skies/Airships.jar");
-        gameLocations.add("./Airships.jar");
+        // my special rule
+        gameLocations.add("/home/kenro/.steam/steam/steamapps/common/Airships Conquer the Skies/game.jar");
 
         List<Path> jarPaths = gameLocations.stream()
         .map(path -> Paths.get(path).toAbsolutePath().normalize())
-        .filter(Files::exists).toList();
-
+        .filter(Files::exists).collect(Collectors.toList());
         // Finds the first jar that contains any class specified by the last parameter
         GameProviderHelper.FindResult result = GameProviderHelper.findFirst(jarPaths, new HashMap<>(), true, ENTRYPOINTS);
 
@@ -255,7 +255,7 @@ public class AirshipGameProvider implements GameProvider {
         gameVersion = new Builder().setNumber(1).setBuild(2).setRevision(2).build();
 
         try{
-            var classifier = new LibClassifier<>(AirshipsLibraries.class, envType, this);
+            LibClassifier classifier = new LibClassifier<>(AirshipsLibraries.class, envType, this);
 
             classifier.process(gameJar);
             classifier.process(launcher.getClassPath());
@@ -277,7 +277,7 @@ public class AirshipGameProvider implements GameProvider {
             arguments.put("gameDir", Paths.get(".").toAbsolutePath().normalize().toString());
         }
 
-        Path launchDir = Path.of(arguments.get("gameDir"));
+        Path launchDir = Paths.get(arguments.get("gameDir"));
         Log.debug(LogCategory.GAME_PROVIDER, "Launch directory is " + launchDir);
     }
 

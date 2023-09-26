@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loader/0.14.9/6fcb9a9cd0a00e44bd174351e75ca3b520d15667/fabric-loader-0.14.9-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loader/0.14.9/8582c6e659a90e4306d6012234c02a825141c9ef/fabric-loader-0.14.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/8e6d9c415157bbde32bab9b01ccb23872a12b930/sponge-mixin-0.11.4+mixin.0.8.5-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.8.1/2c2d0a3a359a6041bbb1c5d719550753244d3f71/tiny-remapper-0.8.1-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.8.1/d220c092cd1446d5f2668b53e71abe23a12cb8cf/tiny-remapper-0.8.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.3/1692e21847cf3db0b24e1938553cab84f50bf03d/asm-commons-9.3-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.3/1f2a432d1212f5c352ae607d7b61dcae20c20af5/asm-commons-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.3/7a969dd37607523cfd3b9d2ef1a3e78882bfe647/asm-util-9.3-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.3/9595bc05510d0bd4b610188b77333fe4851a1975/asm-util-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.3/fbcbbfcd8c350fea66dd36e63b1e118d4ab3370c/asm-analysis-9.3-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.3/4b071f211b37c38e0e9f5998550197c8593f6ad8/asm-analysis-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.3/cc1987e5e291659c366c4b9be35d105d40a518a/asm-tree-9.3-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.3/78d2ecd61318b5a58cd04fb237636c0e86b77d97/asm-tree-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/ce26e415ccafa10c6624a07bdb38d969110f568f/asm-9.3-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-mappings-parser/0.3.0+build.17/a4bce6ed0c98bd273147203f8e708db013905eb5/tiny-mappings-parser-0.3.0+build.17-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-mappings-parser/0.3.0+build.17/2f10540a290e382a7cd35c16ec3900046a4e252/tiny-mappings-parser-0.3.0+build.17.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/2.1.0/39e4ffd7840b047e3ab6785c2ca00a5151ee49be/access-widener-2.1.0-sources.jar" kind="lib" path="/home/kenro/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/2.1.0/f62a27adbfd8ab4d4fa5681793039f2c0b177155/access-widener-2.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>

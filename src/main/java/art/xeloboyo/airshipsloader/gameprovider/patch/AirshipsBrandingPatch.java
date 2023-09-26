@@ -42,7 +42,11 @@ public class AirshipsBrandingPatch extends GamePatch {
                     // here we are searching for 'LDC "1.1.1"'
                     // and replacing it with our version
                     //
-                    if(insn.getOpcode() == Opcodes.LDC && insn instanceof LdcInsnNode ldclsn && ldclsn.cst.equals("1.2.2")){
+                    boolean is_ldc = false;
+                    if (insn instanceof LdcInsnNode) {
+                      is_ldc = true;
+                    }
+                    if(insn.getOpcode() == Opcodes.LDC && is_ldc && ((LdcInsnNode)insn).cst.equals("1.2.2")){
                         it.set(new LdcInsnNode("1.2.2 " + AirshipGameHooks.getBrand()));
                         //it.next();
                         //it.add(new VarInsnNode(Opcodes.ALOAD, 1));
