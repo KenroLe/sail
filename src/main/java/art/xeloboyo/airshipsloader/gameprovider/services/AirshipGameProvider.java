@@ -236,7 +236,8 @@ public class AirshipGameProvider implements GameProvider {
         // Add all usual jar locations
         // my special rule
         gameLocations.add("/home/kenro/.steam/steam/steamapps/common/Airships Conquer the Skies/game.jar");
-
+        gameLocations.add("../Airships.jar");
+        gameLocations.add("../game.jar");
         List<Path> jarPaths = gameLocations.stream()
         .map(path -> Paths.get(path).toAbsolutePath().normalize())
         .filter(Files::exists).collect(Collectors.toList());

@@ -6,16 +6,15 @@ fabric-dependencies/asm-analysis-9.3.jar:\
 fabric-dependencies/tiny-mappings-parser-0.3.0+build.17.jar:\
 fabric-dependencies/asm-commons-9.3.jar:\
 fabric-dependencies/access-widener-2.1.0.jar:\
-fabric-dependencies/fabric-loader-0.14.9.jar:\
+fabric-dependencies/fabric-loader-0.14.11.jar:\
 fabric-dependencies/asm-9.3.jar:\
 fabric-dependencies/asm-util-9.3.jar:\
-build/libs/AirshipsGameProvider-1.0.0.jar:\
+AirshipsGameProvider-1.0.0.jar:\
 net.fabricmc.loader.impl.launch.knot.KnotClient:\
-build/libs/AirshipsGameProvider-1.0.0.jar:\
-mods/modid-1.0.0.jar:\
-~/.steam/steam/steamapps/common/Airships\ Conquer\ the\ Skies/lib/native/*:\
-~/.steam/steam/steamapps/common/Airships\ Conquer\ the\ Skies/lib/* \
-  -Djava.library.path=/home/kenro/.steam/steam/steamapps/common/Airships\ Conquer\ the\ Skies/lib/native \
-  -Dsteam=true \
+AirshipsGameProvider-1.0.0.jar:\
+../lib/native/*:\
+../lib/* \
+ -Djava.library.path=/home/kenro/.steam/steam/steamapps/common/Airships\ Conquer\ the\ Skies/lib/native \
+ -Dsteam=true \
 net.fabricmc.loader.impl.launch.knot.KnotClient
 

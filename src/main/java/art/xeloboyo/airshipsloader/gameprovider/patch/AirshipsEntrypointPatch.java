@@ -1,19 +1,22 @@
 package art.xeloboyo.airshipsloader.gameprovider.patch;
 
-import art.xeloboyo.airshipsloader.gameprovider.services.AirshipGameProvider;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.Type;
+import org.objectweb.asm.tree.AbstractInsnNode;
+import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.InsnNode;
+import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.MethodNode;
 import art.xeloboyo.airshipsloader.gameprovider.services.AirshipGameHooks;
+import art.xeloboyo.airshipsloader.gameprovider.services.AirshipGameProvider;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.impl.game.patch.GamePatch;
 import net.fabricmc.loader.impl.launch.FabricLauncher;
 import net.fabricmc.loader.impl.util.log.Log;
 import net.fabricmc.loader.impl.util.log.LogCategory;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.*;
-
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * This class injects the {@link ModInitializer#onInitialize()} hooks.

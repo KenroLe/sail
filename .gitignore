@@ -1,4 +1,5 @@
 fabric-dependencies
+release/*
 # Compiled class file
 *.class
 
