@@ -1,6 +1,6 @@
-mkdir release
-cp build/libs/AirshipsGameProvider-1.0.0.jar release
-cp fabric-dependencies release -r
-cp run.sh release
-cp run.bat release
-cp deps.txt release
+mkdir sail
+cp build/libs/AirshipsGameProvider-1.0.0.jar sail
+cp fabric-dependencies sail -r
+cp run.sh sail
+cp run.bat sail
+cp deps.txt sail
